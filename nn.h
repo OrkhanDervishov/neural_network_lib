@@ -219,8 +219,6 @@ void mat_print(Mat m)
 #ifndef NN_H_
 #define NN_H_
 
-#include "../math/matrix.h"
-
 
 // NN Declarations
 /*************************************************************** */

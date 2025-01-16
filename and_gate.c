@@ -1,7 +1,7 @@
 #define MATRIX_IMPLEMENTATION
 #define NN_IMPLEMENTATION
 #define AUTO_NN_FUNCS_IMPLEMENTATIONS
-#include "./network/nn.h"
+#include "nn.h"
 
 #include <time.h>
 
@@ -56,19 +56,25 @@ int main()
 
 
     //srand(time(0));
-    size_t layers = 2;
-    size_t neuron_layers[] = {2, 1};
+    size_t layers = 4;
+    size_t neuron_layers[] = {20, 100, 40 ,10};
 
     Model m = auto_create_model(layers, neuron_layers, 0);
+
+    return 0;
     Dataset ds = auto_create_dataset(4, 2, 1, and_data1, and_labels1);
 
     //mat_print(ds.labels[0]);
 
     printf("cost = %f\n", cost(m, ds));
 
-    train(m, ds, 1000);
+    train(m, ds, 100000);
 
     printf("cost = %f\n", cost(m, ds));
+
+
+
+
 
     // INPUT_LAYER(m) = input;
 
